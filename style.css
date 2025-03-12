@@ -1,0 +1,648 @@
+body {
+  background-color: #303033;
+}
+
+/* HEADER START */
+.navbar {
+  background-color: #303033;
+  padding: 0 24px;
+}
+
+.navbar .navbar-nav a {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+
+.navbar .navbar-nav a:hover {
+  color: #31a74e;
+}
+
+.navbar-brand img {
+  height: 40px;
+  width: auto;
+}
+
+.navbar .container-fluid {
+  padding: 8px 0;
+}
+
+.navbar button {
+  background-color: white;
+}
+
+.navbar-toggler {
+  border: none;
+  font-size: 1.25rem;
+}
+
+.navbar-toggler:focus,
+btn-close:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.waktu-realtime {
+  background-color: #f8f9fa;
+  color: #444;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  padding: 12px 30px;
+}
+
+.waktu-realtime #waktu {
+  font-weight: bold;
+}
+
+.waktu-realtime #waktu span {
+  color: green;
+}
+
+@media (max-width: 455px) {
+  .navbar {
+    height: auto;
+  }
+  .navbar-brand img {
+    height: 30px;
+  }
+  .navbar-toggler {
+    font-size: 0.8rem;
+  }
+  .navbar-nav .nav-link {
+    font-size: 0.6rem;
+    padding: 10px;
+  }
+  .waktu-realtime {
+    flex-direction: column;
+    font-size: 14px; /* Ukuran font lebih kecil */
+  }
+  .waktu-realtime #waktu {
+    font-size: 12px; /* Ukuran font lebih kecil */
+  }
+}
+/* HEADER END */
+
+/* RAMALAN START */
+.ramalan {
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #6c757d;
+  font-family: "Montserrat", sans-serif;
+}
+
+.search-box i {
+  font-size: 18px;
+  margin-right: 10px;
+  color: #6c757d;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 80%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.search-box input::placeholder {
+  color: #6c757d;
+}
+
+.ramalan-box {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white; /* Warna abu-abu seperti gambar */
+  border-radius: 15px;
+}
+
+.ramalan-kiri {
+  flex: 1;
+  background-color: #b0b0b0; /* Warna lebih gelap */
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  position: relative; /* Membuat posisi relatif untuk overlay */
+  overflow: hidden; /* Memastikan overlay tidak keluar dari container */
+  color: white; /* Pastikan teks berwarna putih */
+}
+
+.ramalan-kiri::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2); /* Overlay hitam dengan transparansi 40% */
+  z-index: 1; /* Pastikan overlay berada di atas background */
+}
+
+.ramalan-kiri > * {
+  position: relative; /* Pastikan teks dan elemen lain berada di atas overlay */
+  z-index: 2; /* Teks berada di atas overlay */
+}
+
+.ramalan-kiri h4 {
+  font-weight: bold;
+}
+
+.ramalan-kiri i {
+  font-size: 50px;
+  display: block;
+  margin: 10px 0;
+}
+
+.ramalan-kiri h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Animasi awan bergerak */
+@keyframes moveClouds {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+/* Class untuk kondisi cuaca cerah */
+.ramalan-kiri.sunny {
+  background-image: url("assets/sunny-background.jpg"); /* Gambar latar belakang cerah */
+  background-size: cover;
+  animation: moveClouds 30s linear infinite; /* Animasi awan bergerak */
+}
+
+/* Class untuk kondisi cuaca hujan */
+.ramalan-kiri.rainy {
+  background-image: url("assets/rainy-background.jpeg"); /* Gambar latar belakang hujan */
+  background-size: cover;
+  animation: moveClouds 20s linear infinite; /* Animasi awan bergerak lebih cepat */
+}
+
+/* Class untuk kondisi cuaca berawan */
+.ramalan-kiri.cloudy {
+  background-image: url("assets/cloudy-background.jpg"); /* Gambar latar belakang berawan */
+  background-size: cover;
+  animation: moveClouds 40s linear infinite; /* Animasi awan bergerak lebih lambat */
+}
+
+/* Class untuk kondisi cuaca badai */
+.ramalan-kiri.stormy {
+  background-image: url("assets/stormy-background.jpeg"); /* Gambar latar belakang badai */
+  background-size: cover;
+  animation: moveClouds 15s linear infinite; /* Animasi awan bergerak cepat */
+}
+
+.ramalan-kanan {
+  flex: 2;
+  padding: 20px;
+  font-size: 16px;
+}
+
+.ramalan-kanan hr {
+  margin: 10px 0;
+}
+
+.peringatan {
+  font-weight: bold;
+  text-align: center;
+}
+
+#weatherIcon {
+  color: white;
+  font-size: 50px;
+  margin: 10px 0;
+}
+/* RAMALAN END */
+
+/* RAMALAN-MAPS START */
+.ramalan-maps {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+@media (max-width: 455px) {
+  /* Container Ramalan */
+  .ramalan .container {
+    padding: 0 25px;
+  }
+
+  /* Ramalan Box */
+  .ramalan-box {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .ramalan-kiri {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .ramalan-kanan {
+    width: 100%;
+    padding: 20px 10px;
+  }
+
+  .ramalan-kiri h4 {
+    font-size: 18px;
+  }
+
+  .ramalan-kiri h2 {
+    font-size: 20px;
+  }
+
+  .ramalan-kanan p {
+    font-size: 14px;
+  }
+
+  /* Search Box */
+  .search-box {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .search-box i {
+    font-size: 14px;
+  }
+
+  .search-box input {
+    font-size: 12px;
+  }
+
+  /* Peta */
+  .ramalan-maps {
+    height: 200px;
+  }
+
+  /* Detail Cuaca Per Jam */
+  .hourly-weather-scroll {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .hourly-item {
+    width: 120px;
+    height: 150px;
+    padding: 8px;
+  }
+
+  .hourly-item p {
+    font-size: 12px;
+  }
+
+  .hourly-item i {
+    font-size: 20px;
+  }
+
+  /* Peringatan Cuaca */
+  .peringatan {
+    font-size: 12px;
+  }
+}
+/* RAMALAN-MAPS END */
+
+/* PRAKIRAAN CUACA START*/
+.prakiraan h2,
+.prakiraan p {
+  color: white;
+}
+
+.card {
+  height: 280px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.card:active {
+  transform: scale(0.95);
+}
+
+/* Animasi Loading */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.loading-spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #31a74e; /* Warna hijau */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-container p {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+/* PRAKIRAAN CUACA END*/
+
+/* DETAIL CUACA START */
+.detailCuaca {
+  height: auto;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* Container untuk scroll horizontal */
+.hourly-weather-scroll {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px 0;
+}
+
+/* Container untuk item cuaca per jam */
+.hourly-weather {
+  display: inline-flex;
+  gap: 10px;
+  padding: 10px;
+}
+
+/* Styling untuk setiap item cuaca per jam */
+.hourly-item {
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  width: 150px; /* Lebar tetap */
+  height: 200px; /* Tinggi tetap */
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.hourly-item p {
+  margin: 5px 0;
+  white-space: normal;
+}
+
+.hourly-item i {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Animasi saat card menampilkan detail cuaca per jam */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hourly-item {
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Animasi Loading */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #31a74e; /* Warna hijau */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+/* Mobile (max-width: 455px) */
+@media (max-width: 455px) {
+  .prakiraan .container {
+    padding: 0 25px;
+  }
+
+  .prakiraan .card {
+    width: 100%; /* 1 card per baris */
+    margin: 10px 0; /* Margin vertikal saja */
+    height: auto;
+  }
+
+  .prakiraan .card p {
+    font-size: 12px; /* Ukuran font lebih kecil */
+  }
+
+  .prakiraan .card h4 {
+    font-size: 16px; /* Ukuran font lebih kecil */
+  }
+
+  .prakiraan .card i {
+    font-size: 24px; /* Ukuran ikon lebih kecil */
+  }
+
+  .prakiraan .row {
+    flex-direction: column; /* Card ditampilkan secara vertikal */
+  }
+
+  /* Tambahkan scroll horizontal jika card tidak muat */
+  .prakiraan .hourly-weather-scroll {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .prakiraan .hourly-item {
+    width: 120px; /* Lebar tetap untuk item cuaca per jam */
+    height: 150px; /* Tinggi tetap untuk item cuaca per jam */
+    padding: 8px;
+  }
+
+  .prakiraan .hourly-item p {
+    font-size: 12px; /* Ukuran font lebih kecil */
+  }
+
+  .prakiraan .hourly-item i {
+    font-size: 20px; /* Ukuran ikon lebih kecil */
+  }
+}
+
+/* DETAIL CUACA END */
+
+/* TREN CUACA START */
+.tren-cuaca h2 {
+  color: white;
+}
+
+.grafik-cuaca {
+  background: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  margin-top: 20px;
+}
+
+#weatherChart {
+  width: 100% !important;
+  height: 400px !important;
+}
+
+/* Styling untuk Statistik Cuaca */
+.statistik-cuaca {
+  display: flex;
+  justify-content: space-around;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.statistik-item {
+  text-align: center;
+}
+
+.statistik-label {
+  display: block;
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 5px;
+}
+
+.statistik-value {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Styling untuk Heatmap dan Pie Chart */
+.heatmap-cuaca,
+.pie-chart-cuaca {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.heatmap-cuaca h4,
+.pie-chart-cuaca h4 {
+  color: #fff;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+@media (max-width: 455px) {
+  /* Container Tren Cuaca */
+  .tren-cuaca .container {
+    padding: 0 25px;
+  }
+
+  /* Grafik Cuaca */
+  .grafik-cuaca {
+    padding: 10px;
+  }
+
+  #weatherChart {
+    height: 250px !important;
+  }
+
+  /* Statistik Cuaca */
+  .statistik-cuaca {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .statistik-item {
+    margin-bottom: 10px;
+  }
+
+  .statistik-label {
+    font-size: 12px;
+  }
+
+  .statistik-value {
+    font-size: 16px;
+  }
+
+  /* Heatmap dan Pie Chart */
+  .heatmap-cuaca,
+  .pie-chart-cuaca {
+    padding: 10px;
+  }
+
+  .heatmap-cuaca h4,
+  .pie-chart-cuaca h4 {
+    font-size: 16px;
+  }
+
+  #heatmapChart {
+    height: 200px !important;
+  }
+
+  /* Judul dan Teks */
+  .tren-cuaca h2 {
+    font-size: 25px;
+  }
+}
+/* TREN CUACA END */
+
+/* FOOTER START */
+.footer {
+  height: auto;
+  background-color: rgb(113, 113, 113);
+  padding: 30px 24px;
+  color: white;
+}
+
+.footer img {
+  height: 50px;
+  width: auto;
+}
+
+@media (max-width: 455px) {
+  .footer img {
+    height: 30px;
+    width: auto;
+  }
+}
+/* FOOTER END */

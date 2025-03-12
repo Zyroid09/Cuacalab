@@ -1,0 +1,289 @@
+/* HEADER START */
+.navbar {
+  background-color: #303033;
+  padding: 0 24px;
+}
+
+.navbar .navbar-nav a {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+
+.navbar .navbar-nav a:hover {
+  color: #31a74e;
+}
+
+.navbar-brand img {
+  height: 40px;
+  width: auto;
+}
+
+.navbar .container-fluid {
+  padding: 8px 0;
+}
+
+.navbar button {
+  background-color: white;
+}
+
+.navbar-toggler {
+  border: none;
+  font-size: 1.25rem;
+}
+
+.navbar-toggler:focus,
+btn-close:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.waktu-realtime {
+  background-color: #f8f9fa;
+  color: #444;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  padding: 12px 30px;
+}
+
+.waktu-realtime #waktu {
+  font-weight: bold;
+}
+
+.waktu-realtime #waktu span {
+  color: green;
+}
+
+@media (max-width: 455px) {
+  .navbar {
+    height: auto;
+  }
+  .navbar-brand img {
+    height: 30px;
+  }
+  .navbar-toggler {
+    font-size: 0.8rem;
+  }
+  .navbar-nav .nav-link {
+    font-size: 0.6rem;
+    padding: 10px;
+  }
+  .waktu-realtime {
+    flex-direction: column;
+    font-size: 14px;
+  }
+  .waktu-realtime #waktu {
+    font-size: 12px;
+  }
+}
+/* HEADER END */
+
+/* HERO SECTION START */
+.hero-section {
+  background-image: url("../assets/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content img {
+  height: 50px;
+  width: auto;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+}
+
+.hero-content .btn {
+  font-size: 1rem;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 25px;
+  background-color: #31a74e;
+  transition: background-color 0.3s ease;
+}
+
+.hero-content .btn:hover {
+  background-color: #298a41; /* Warna hijau saat hover */
+}
+
+@media (max-width: 455px) {
+  .hero-content img {
+    height: 40px;
+    width: auto;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-content .btn {
+    font-size: 0.8rem;
+    padding: 10px 20px;
+  }
+}
+
+/* Animasi Fade-In */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content {
+  animation: fadeIn 1.5s ease-out;
+}
+/* HERO SECTION END */
+
+/* FITUR SECTION START */
+.fitur {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+}
+
+.row {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.feature-card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: white;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  color: #31a74e;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #666;
+}
+
+@media (max-width: 995px) {
+  .fitur {
+    padding: 40px 20px;
+  }
+
+  .feature-card {
+    padding: 20px;
+  }
+
+  .feature-icon {
+    font-size: 2.8rem;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+  }
+
+  .card-text {
+    font-size: 1rem;
+  }
+
+  .row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .col-md-4 {
+    width: 50%;
+  }
+}
+
+@media (max-width: 455px) {
+  .fitur {
+    padding: 30px 10px;
+  }
+
+  .feature-card {
+    padding: 15px;
+  }
+
+  .feature-icon {
+    font-size: 2.5rem;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  .card-text {
+    font-size: 1rem;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .col-md-4 {
+    width: 100%;
+  }
+}
+/* FITUR SECTION END */
+
+/* FOOTER START */
+.footer {
+  height: auto;
+  background-color: #303033;
+  padding: 30px 24px;
+  color: white;
+}
+
+.footer img {
+  height: 50px;
+  width: auto;
+}
+
+@media (max-width: 455px) {
+  .footer img {
+    height: 30px;
+    margin-bottom: 20px;
+  }
+}
+/* FOOTER END */

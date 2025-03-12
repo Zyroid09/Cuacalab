@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Link bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
+
+    <!-- font google -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <!-- link style -->
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Cuacalab</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="assets/logo.png" alt="" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto">
+              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" href="page/about.html">About</a>
+              <a class="nav-link" href="page/ketentuan.html"
+                >Kebijakan Privasi</a
+              >
+              <a class="nav-link" href="page/ketentuan.html"
+                >Ketentuan Pengguna</a
+              >
+              <a class="nav-link" href="#">Tanggapan</a>
+              <a class="nav-link" href="page/faq.html">FAQ</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="waktu-realtime d-flex justify-content-between">
+        <span id="tanggal"></span>
+        <span id="waktu"></span>
+      </div>
+    </header>
+
+    <main>
+      <section class="ramalan mt-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="search-box" id="searchBox">
+                <i class="bi bi-search"></i>
+                <input
+                  type="text"
+                  id="searchInput"
+                  placeholder="Cari lokasi..."
+                  style="border: none; outline: none; background: transparent"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <div class="ramalan-box d-flex">
+                <!-- Bagian kiri (tanggal & suhu) -->
+                <div class="ramalan-kiri">
+                  <h4 id="currentDay">Hari</h4>
+                  <p id="currentDate">Tanggal bulan tahun</p>
+                  <i id="weatherIcon" class="bi bi-cloud-fill"></i>
+                  <h2 id="currentTemp">27°C</h2>
+                  <p id="weatherDescription">Hujan Sedang</p>
+                </div>
+
+                <!-- Bagian kanan (detail cuaca) -->
+                <div class="ramalan-kanan">
+                  <p>
+                    <strong>Angin (km/jam)</strong> :
+                    <span id="windSpeed">3.4</span>
+                  </p>
+                  <p>
+                    <strong>Arah Angin</strong> :
+                    <span id="windDirection">Utara</span>
+                  </p>
+                  <p>
+                    <strong>Kelembapan</strong> :
+                    <span id="humidity">94.00%</span>
+                  </p>
+                  <hr />
+                  <p class="peringatan" id="weatherWarning">
+                    Peringatan cuaca buruk
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <div
+                class="ramalan-maps"
+                id="map"
+                style="height: 400px; border-radius: 15px; overflow: hidden"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="prakiraan">
+        <div class="container">
+          <div class="row mt-5">
+            <div class="col-md-12 mb-3">
+              <h2>PRAKIRAAN CUACA</h2>
+            </div>
+          </div>
+          <div
+            class="loading-container mb-3"
+            id="loadingContainer"
+            style="display: none"
+          >
+            <div class="loading-spinner"></div>
+            <p>Memperbarui prakiraan cuaca...</p>
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+              <div class="card p-3 text-center">
+                <p>Hari ini</p>
+                <hr />
+                <p>Hujan Deras</p>
+                <p>94%</p>
+                <i class="bi bi-cloud-fill"></i>
+                <h4>27°C</h4>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="card p-3 text-center">
+                <p>Besok</p>
+                <hr />
+                <p>Mendung</p>
+                <p>90%</p>
+                <i class="bi bi-cloud-fill"></i>
+                <h4>27°C</h4>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="card p-3 text-center">
+                <p>03 Maret</p>
+                <hr />
+                <p>Cerah</p>
+                <p>85%</p>
+                <i class="bi bi-cloud-fill"></i>
+                <h4>27°C</h4>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="card p-3 text-center">
+                <p>04 Maret</p>
+                <hr />
+                <p>Hujan Ringan</p>
+                <p>90%</p>
+                <i class="bi bi-cloud-fill"></i>
+                <h4>27°C</h4>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="card p-3 text-center">
+                <p>05 Maret</p>
+                <hr />
+                <p>Hujan Lebat</p>
+                <p>94%</p>
+                <i class="bi bi-cloud-fill"></i>
+                <h4>27°C</h4>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="card p-3 text-center">
+                <p>06 Maret</p>
+                <hr />
+                <p>Berawan</p>
+                <p>91%</p>
+                <i class="bi bi-cloud-fill"></i>
+                <h4>27°C</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <div class="detailCuaca">
+                <div class="hourly-weather-scroll">
+                  <div class="hourly-weather" id="hourlyWeatherDetail"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tren-cuaca">
+        <div class="container">
+          <div class="row mt-5">
+            <div class="col-md-12">
+              <h2>TREN CUACA</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Grafik cuaca -->
+              <div class="grafik-cuaca">
+                <canvas id="weatherChart"></canvas>
+              </div>
+              <!-- Informasi Statistik Cuaca -->
+              <div class="statistik-cuaca mt-3">
+                <div class="statistik-item">
+                  <span class="statistik-label">Rata-rata Suhu</span>
+                  <span class="statistik-value" id="avgTemp">-</span>
+                </div>
+                <div class="statistik-item">
+                  <span class="statistik-label">Total Curah Hujan</span>
+                  <span class="statistik-value" id="totalRainfall">-</span>
+                </div>
+                <div class="statistik-item">
+                  <span class="statistik-label">Kelembaban Rata-rata</span>
+                  <span class="statistik-value" id="avgHumidity">-</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <!-- Heatmap -->
+              <div class="heatmap-cuaca">
+                <h4>Distribusi Suhu (Heatmap)</h4>
+                <canvas id="heatmapChart"></canvas>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <!-- Pie Chart -->
+              <div class="pie-chart-cuaca">
+                <h4>Persentase Kondisi Cuaca</h4>
+                <canvas id="pieChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer mt-5">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <a href=""><img src="assets/logo.png" alt="" /></a>
+          </div>
+          <div class="col-md-6">
+            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="#">Kebijakan Privasi</a>
+            <a class="nav-link" href="#">Ketentuan Pengguna</a>
+            <a class="nav-link" href="#">Tanggapan</a>
+            <a class="nav-link" href="#">FAQ</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <hr />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <p>&copy; 2025 Cuacalab. All Right Reserved</p>
+          </div>
+          <div class="col-md-6 text-end">
+            <p>Developed by Naufal Abdala Syawali | Powered by Gamelab.id</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Chart JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <!--Link JS-->
+    <script src="script.js"></script>
+
+    <!-- Link js bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

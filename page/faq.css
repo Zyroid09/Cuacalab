@@ -1,0 +1,112 @@
+/* HEADER START */
+.navbar {
+  background-color: #303033;
+  padding: 0 24px;
+}
+
+.navbar .navbar-nav a {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+
+.navbar .navbar-nav a:hover {
+  color: #31a74e;
+}
+
+.navbar-brand img {
+  height: 40px;
+  width: auto;
+}
+
+.navbar .container-fluid {
+  padding: 8px 0;
+}
+
+.navbar button {
+  background-color: white;
+}
+
+.navbar-toggler {
+  border: none;
+  font-size: 1.25rem;
+}
+
+.navbar-toggler:focus,
+btn-close:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.waktu-realtime {
+  background-color: #f8f9fa;
+  color: #444;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  padding: 12px 30px;
+}
+
+.waktu-realtime #waktu {
+  font-weight: bold;
+}
+
+.waktu-realtime #waktu span {
+  color: green;
+}
+
+@media (max-width: 455px) {
+  .navbar {
+    height: auto;
+  }
+  .navbar-brand img {
+    height: 30px;
+  }
+  .navbar-toggler {
+    font-size: 0.8rem;
+  }
+  .navbar-nav .nav-link {
+    font-size: 0.6rem;
+    padding: 10px;
+  }
+}
+/* HEADER END */
+
+/* FAQ START */
+.kotak-faq {
+  border-radius: 15px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.faq .col-md-12 {
+  padding: 40px;
+}
+/* FAQ ENDN */
+
+/* TANGGAPAN START */
+.kotak-tanggapan {
+  border-radius: 15px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.kotak-tanggapan button {
+  background-color: #31a74e;
+}
+
+.kotak-tanggapan button:hover {
+  background-color: #288940;
+}
+/* TANGGAPAN END */
+
+/* FOOTER START */
+.footer {
+  height: auto;
+  background-color: #303033;
+  padding: 30px 24px;
+  color: white;
+}
+
+.footer img {
+  height: 50px;
+  width: auto;
+}
+/* FOOTER END */
