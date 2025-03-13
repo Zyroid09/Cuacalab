@@ -117,22 +117,22 @@ btn-close:focus {
 
   .box-kebijakan h2,
   .box-ketentuan h2 {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .box-kebijakan h4,
   .box-ketentuan h4 {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .box-kebijakan ol,
   .box-ketentuan ol {
-    padding-left: 15px;
+    padding-left: 16px;
   }
 
   .box-kebijakan ol li,
   .box-ketentuan ol li {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.4;
   }
 }
