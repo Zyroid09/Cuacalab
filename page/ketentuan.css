@@ -143,4 +143,11 @@ btn-close:focus {
   height: 50px;
   width: auto;
 }
+
+@media (max-width: 455px) {
+  .footer img {
+    height: 30px;
+    width: auto;
+  }
+}
 /* FOOTER END */
