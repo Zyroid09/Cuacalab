@@ -91,6 +91,44 @@ btn-close:focus {
 .box-ketentuan .col-md-12 {
   padding: 40px;
 }
+
+@media (max-width: 455px) {
+  .kebijakan .container {
+    padding: 0 35px;
+  }
+
+  .box-kebijakan,
+  .box-ketentuan {
+    padding: 20px !important;
+    border-radius: 10px;
+  }
+
+  .box-kebijakan .col-md-12,
+  .box-ketentuan .col-md-12 {
+    padding: 20px;
+  }
+
+  .box-kebijakan h2,
+  .box-ketentuan h2 {
+    font-size: 18px;
+  }
+
+  .box-kebijakan h4,
+  .box-ketentuan h4 {
+    font-size: 16px;
+  }
+
+  .box-kebijakan ol,
+  .box-ketentuan ol {
+    padding-left: 15px;
+  }
+
+  .box-kebijakan ol li,
+  .box-ketentuan ol li {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
 /* KEBIJAKAN END */
 
 /* FOOTER START */
