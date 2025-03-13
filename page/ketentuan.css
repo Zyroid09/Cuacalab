@@ -68,6 +68,13 @@ btn-close:focus {
     font-size: 0.6rem;
     padding: 10px;
   }
+  .waktu-realtime {
+    flex-direction: column;
+    font-size: 14px; /* Ukuran font lebih kecil */
+  }
+  .waktu-realtime #waktu {
+    font-size: 12px; /* Ukuran font lebih kecil */
+  }
 }
 /* HEADER END */
 
