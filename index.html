@@ -28,6 +28,9 @@
     <!-- link style -->
     <link rel="stylesheet" href="style.css" />
 
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <title>Cuacalab</title>
   </head>
   <body>
@@ -50,7 +53,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ms-auto">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" href="index.html">Home</a>
               <a class="nav-link" href="page/about.html">About</a>
               <a class="nav-link" href="page/ketentuan.html"
                 >Kebijakan Privasi</a
@@ -58,7 +61,7 @@
               <a class="nav-link" href="page/ketentuan.html"
                 >Ketentuan Pengguna</a
               >
-              <a class="nav-link" href="#">Tanggapan</a>
+              <a class="nav-link" href="page/faq.html">Tanggapan</a>
               <a class="nav-link" href="page/faq.html">FAQ</a>
             </div>
           </div>
@@ -76,7 +79,12 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <div class="search-box" id="searchBox">
+              <div
+                class="search-box"
+                id="searchBox"
+                data-aos="fade-up"
+                data-aos-duration="650"
+              >
                 <i class="bi bi-search"></i>
                 <input
                   type="text"
@@ -90,7 +98,12 @@
 
           <div class="row mt-3">
             <div class="col-md-12">
-              <div class="ramalan-box d-flex">
+              <div
+                class="ramalan-box d-flex"
+                data-aos="fade-up"
+                data-aos-duration="650"
+                data-aos-delay="150"
+              >
                 <!-- Bagian kiri (tanggal & suhu) -->
                 <div class="ramalan-kiri">
                   <h4 id="currentDay">Hari</h4>
@@ -129,6 +142,9 @@
                 class="ramalan-maps"
                 id="map"
                 style="height: 400px; border-radius: 15px; overflow: hidden"
+                data-aos="fade-up"
+                data-aos-duration="650"
+                data-aos-delay="200"
               ></div>
             </div>
           </div>
@@ -138,7 +154,11 @@
       <section class="prakiraan">
         <div class="container">
           <div class="row mt-5">
-            <div class="col-md-12 mb-3">
+            <div
+              class="col-md-12 mb-3"
+              data-aos="fade-up"
+              data-aos-duration="650"
+            >
               <h2>PRAKIRAAN CUACA</h2>
             </div>
           </div>
@@ -150,7 +170,12 @@
             <div class="loading-spinner"></div>
             <p>Memperbarui prakiraan cuaca...</p>
           </div>
-          <div class="row">
+          <div
+            class="row"
+            data-aos="fade-up"
+            data-aos-duration="650"
+            data-aos-delay="150"
+          >
             <div class="col-md-2">
               <div class="card p-3 text-center">
                 <p>Hari ini</p>
@@ -215,7 +240,12 @@
 
           <div class="row mt-3">
             <div class="col-md-12">
-              <div class="detailCuaca">
+              <div
+                class="detailCuaca"
+                data-aos="fade-up"
+                data-aos-duration="650"
+                data-aos-delay="150"
+              >
                 <div class="hourly-weather-scroll">
                   <div class="hourly-weather" id="hourlyWeatherDetail"></div>
                 </div>
@@ -228,18 +258,28 @@
       <section class="tren-cuaca">
         <div class="container">
           <div class="row mt-5">
-            <div class="col-md-12">
+            <div class="col-md-12" data-aos="fade-up" data-aos-duration="650">
               <h2>TREN CUACA</h2>
             </div>
           </div>
           <div class="row">
             <div class="col-md-12">
               <!-- Grafik cuaca -->
-              <div class="grafik-cuaca">
+              <div
+                class="grafik-cuaca"
+                data-aos="fade-up"
+                data-aos-duration="650"
+                data-aos-delay="100"
+              >
                 <canvas id="weatherChart"></canvas>
               </div>
               <!-- Informasi Statistik Cuaca -->
-              <div class="statistik-cuaca mt-3">
+              <div
+                class="statistik-cuaca mt-3"
+                data-aos="fade-up"
+                data-aos-duration="650"
+                data-aos-delay="150"
+              >
                 <div class="statistik-item">
                   <span class="statistik-label">Rata-rata Suhu</span>
                   <span class="statistik-value" id="avgTemp">-</span>
@@ -258,14 +298,24 @@
           <div class="row">
             <div class="col-md-6">
               <!-- Heatmap -->
-              <div class="heatmap-cuaca">
+              <div
+                class="heatmap-cuaca"
+                data-aos="fade-up"
+                data-aos-duration="650"
+                data-aos-delay="200"
+              >
                 <h4>Distribusi Suhu (Heatmap)</h4>
                 <canvas id="heatmapChart"></canvas>
               </div>
             </div>
             <div class="col-md-6">
               <!-- Pie Chart -->
-              <div class="pie-chart-cuaca">
+              <div
+                class="pie-chart-cuaca"
+                data-aos="fade-up"
+                data-aos-duration="650"
+                data-aos-delay="200"
+              >
                 <h4>Persentase Kondisi Cuaca</h4>
                 <canvas id="pieChart"></canvas>
               </div>
@@ -282,11 +332,14 @@
             <a href=""><img src="assets/logo.png" alt="" /></a>
           </div>
           <div class="col-md-6">
-            <a class="nav-link" href="#">Home</a>
-            <a class="nav-link" href="#">Kebijakan Privasi</a>
-            <a class="nav-link" href="#">Ketentuan Pengguna</a>
-            <a class="nav-link" href="#">Tanggapan</a>
-            <a class="nav-link" href="#">FAQ</a>
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="page/about.html">About</a>
+            <a class="nav-link" href="page/ketentuan.html">Kebijakan Privasi</a>
+            <a class="nav-link" href="page/ketentuan.html"
+              >Ketentuan Pengguna</a
+            >
+            <a class="nav-link" href="page/faq.html">Contact</a>
+            <a class="nav-link" href="page/faq.html">FAQ</a>
           </div>
         </div>
         <div class="row">
@@ -310,6 +363,12 @@
 
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 
     <!--Link JS-->
     <script src="script.js"></script>
