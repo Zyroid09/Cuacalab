@@ -35,7 +35,7 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg">
+      <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             <img src="assets/logo.png" alt="" />
@@ -53,7 +53,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ms-auto">
-              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link" href="index.html"><span>Home</span></a>
               <a class="nav-link" href="page/about.html">About</a>
               <a class="nav-link" href="page/ketentuan.html"
                 >Kebijakan Privasi</a
@@ -75,8 +75,31 @@
     </header>
 
     <main>
+      <section class="hero-section">
+        <div class="container">
+          <div class="hero-content">
+            <img
+              src="assets/logo.png"
+              alt=""
+              data-aos="fade-down"
+              data-aos-duration="650"
+            />
+            <p id="typing-text"></p>
+          </div>
+        </div>
+      </section>
+
       <section class="ramalan mt-5">
         <div class="container">
+          <div class="row mb-3">
+            <div
+              class="col-md-12 text-center"
+              data-aos="fade-up"
+              data-aos-duration="650"
+            >
+              <h2>RAMALAN CUACA</h2>
+            </div>
+          </div>
           <div class="row">
             <div class="col-md-12">
               <div
@@ -155,11 +178,11 @@
         <div class="container">
           <div class="row mt-5">
             <div
-              class="col-md-12 mb-3"
+              class="col-md-12 mb-3 text-center"
               data-aos="fade-up"
               data-aos-duration="650"
             >
-              <h2>PRAKIRAAN CUACA</h2>
+              <h2>PERKIRAAN CUACA</h2>
             </div>
           </div>
           <div
@@ -168,7 +191,7 @@
             style="display: none"
           >
             <div class="loading-spinner"></div>
-            <p>Memperbarui prakiraan cuaca...</p>
+            <p>Memperbarui perkiraan cuaca...</p>
           </div>
           <div
             class="row"
@@ -258,7 +281,11 @@
       <section class="tren-cuaca">
         <div class="container">
           <div class="row mt-5">
-            <div class="col-md-12" data-aos="fade-up" data-aos-duration="650">
+            <div
+              class="col-md-12 text-center"
+              data-aos="fade-up"
+              data-aos-duration="650"
+            >
               <h2>TREN CUACA</h2>
             </div>
           </div>
@@ -371,7 +398,7 @@
     </script>
 
     <!--Link JS-->
-    <script src="script.js"></script>
+    <script src="updateJS3.js"></script>
 
     <!-- Link js bootstrap -->
     <script
