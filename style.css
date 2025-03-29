@@ -18,6 +18,11 @@ body {
   font-size: 14px;
 }
 
+.navbar .navbar-nav span {
+  font-weight: bold;
+  color: #31a74e;
+}
+
 .navbar .navbar-nav a:hover {
   color: #31a74e;
 }
@@ -78,16 +83,73 @@ btn-close:focus {
   }
   .waktu-realtime {
     flex-direction: column;
-    font-size: 14px; /* Ukuran font lebih kecil */
+    font-size: 14px;
   }
   .waktu-realtime #waktu {
-    font-size: 12px; /* Ukuran font lebih kecil */
+    font-size: 12px;
   }
 }
 /* HEADER END */
 
+.hero-section {
+  background-image: url("assets/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content img {
+  height: 50px;
+  width: auto;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  animation: blink-cursor 0.8s infinite;
+}
+
+@keyframes blink-cursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@media (max-width: 455px) {
+  .hero-content img {
+    height: 40px;
+    width: auto;
+  }
+
+  .hero-content p {
+    font-size: 0.8rem;
+  }
+}
+
 /* RAMALAN START */
-.ramalan {
+.ramalan h2 {
+  color: white;
 }
 
 .search-box {
